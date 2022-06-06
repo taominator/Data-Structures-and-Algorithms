@@ -1,7 +1,7 @@
 #include <iostream>
 #include <assert.h>
 
-class Vector 
+class Vector
 {
 public:
     int* m_arr;
@@ -110,7 +110,7 @@ public:
 
         for (int p = m_size; p > 0; p--)
         {
-            m_arr[p] = m_arr[p-1];
+            m_arr[p] = m_arr[p - 1];
         }
         m_arr[0] = last_element;
     }
@@ -121,7 +121,7 @@ public:
 
         for (int i = 0; i < m_size; i++)
         {
-            m_arr[i] = m_arr[i+1];
+            m_arr[i] = m_arr[i + 1];
         }
         m_arr[m_size - 1] = first_element;
     }
