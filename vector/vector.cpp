@@ -199,6 +199,7 @@ public:
         return index;
     }*/
 
+    //shift searched value one step left
     int find_transposition(int value)
     {
         for (int i = 0; i < m_size; i++)
