@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 
 struct Node
@@ -43,9 +44,9 @@ private:
 
     void add_new(Node* first, Node* second)
     {
-         first->next = second;
-         second->prev = first;
-         length++;
+        first->next = second;
+        second->prev = first;
+        length++;
     }
 
     //link new node between previous and next
@@ -88,7 +89,7 @@ public:
     void print_tail()
     {
         std::cout << "Tail data: " << tail->data << "\n";
-    }    
+    }
 
     void print()
     {
@@ -169,7 +170,7 @@ public:
                         return;
                     }
                 }
-            } 
+            }
         }
     }
 
@@ -177,7 +178,7 @@ public:
     {
         if (!head)
         {
-            return;
+            return -1;
         }
 
         Node* cur = head->next;
@@ -199,7 +200,7 @@ public:
     {
         if (!head)
         {
-            return;
+            return -1;
         }
 
         Node* cur = tail->prev;
@@ -345,7 +346,7 @@ public:
             }
             start = start->next;
             end = end->prev;
-        }       
+        }
     }
 
     //nth node from start on a 1 based index
@@ -359,7 +360,7 @@ public:
         Node* cur = head;
         for (int i = 0; i < n; i++)
         {
-            if (i == n-1)
+            if (i == n - 1)
             {
                 return cur;
             }
@@ -427,7 +428,7 @@ public:
             while (cur1 && cur2)
             {
                 Node* next{};
-                
+
                 if (cur1->data <= cur2->data)
                 {
                     next = cur1;
@@ -466,29 +467,3 @@ public:
         other.length = 0;
     }
 };
-
-int main()
-{
-    LinkedList list1;
-    list1.insert_end(5);
-    list1.insert_end(23);
-    list1.insert_end(34);
-    list1.insert_end(53);
-    list1.insert_end(63);
-
-    LinkedList list2;
-    list2.insert_end(6);
-    list2.insert_end(7);
-    list2.insert_end(34);
-    list2.insert_end(64);
-    list2.insert_end(436);
-    list2.print();
-    list2.merge_sorted_list(list1);
-    list2.print();
-    //std::cout << "Data: " << list1.get_nth_back(7)->data << "\n";
-
-
-
-    std::cout << "No Runtime Error\n";
-}
-
